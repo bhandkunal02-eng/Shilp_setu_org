@@ -2,11 +2,7 @@ from sqlalchemy import Column,Integer,String,Boolean,DateTime,BOOLEAN
 from src.DB.db import Base
 
 
-class UserModel(Base):
-    __tablename__="user_table"
-
-    id=Column(Integer,primary_key=True)
-    name=Column(String)
-    username=Column(String,nullable=False)
-    hash_password=Column(String,nullable=False)
+class LoginModel(Base):
+    __tablename__="login_table"
     email=Column(String)
+    password=Column(String)
