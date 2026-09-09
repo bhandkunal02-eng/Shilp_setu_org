@@ -1,0 +1,21 @@
+[project]
+name = "finalized-arc"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi",
+    "psycopg2-binary",
+    "pwdlib[argon2] ",
+    "pydantic-settings",
+    "pyjwt",
+    "python-dotenv",
+    "sqlalchemy",
+    "uvicorn",
+    "aiosqlite",
+    "fastapi-users[sqlalchemy]",
+    "imagekitio",
+    "python-multipart",
+]
+
