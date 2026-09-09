@@ -1,5 +1,4 @@
 
-from src.app.Main import app
 from fastapi import APIRouter
 
 product_route=APIRouter(prefix="/product")

@@ -1,20 +1,12 @@
-from annotated_types import test_cases
-from fastapi import APIRouter, File, UploadFile
+from fastapi import APIRouter, UploadFile, File, Depends
+from sqlalchemy.orm import Session
 
-import task
-from src.media.service import upload_image
+from src.DB.db import get_db
+from src.controler.image_controler import save_image
 
+router = APIRouter(prefix="/images")
 
-media_route = APIRouter()
-
-
-@media_route.get("/")
-def root():
-    return {"message": "Shilp Setu API is running"}
-
-@media_route.post("/test_upload")
-async def test_image_upload(file: UploadFile = File(...)):
-    result = upload_image(
-        file=file.file,
-        file_name=file.filename,
-    )
+@router.post("/upload")
+async def upload(file: UploadFile = File(...), db: Session = Depends(get_db)):
+    image = save_image(db, file.file, file.filename)
+    return {"id": image.id, "name": image.name, "url": image.url}
