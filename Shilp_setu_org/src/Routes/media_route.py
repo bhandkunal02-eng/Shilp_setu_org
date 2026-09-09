@@ -1,8 +1,4 @@
-from annotated_types import test_cases
 from fastapi import APIRouter, File, UploadFile
-
-import task
-from src.media.service import upload_image
 
 
 media_route = APIRouter()
