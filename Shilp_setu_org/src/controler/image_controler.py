@@ -2,7 +2,7 @@ from src.model.image_model import Image
 from src.services.image_services import upload_image
 
 def save_image(db, file, file_name):
-    uploaded = upload_image(file, file_name)
+    uploaded = upload_image(file.read(), file_name)
 
     image = Image(
         name=uploaded["file_name"],
