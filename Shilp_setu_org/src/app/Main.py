@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 
+from src.Routes.auth import auth_route
 from src.Routes.orders import orders_Route
 from src.Routes.product import product_route
 from src.Routes.profile import profile_route
@@ -12,6 +13,7 @@ app = FastAPI(
 )
 
 app.include_router(router)
+app.include_router(auth_route)
 app.include_router(orders_Route)
 app.include_router(product_route)
 app.include_router(profile_route)
