@@ -453,7 +453,7 @@ requires-dist = [
     { name = "aiosqlite" },
     { name = "fastapi" },
     { name = "fastapi-users", extras = ["sqlalchemy"] },
-    { name = "imagekitio" },
+    { name = "imagekitio", specifier = "==5.9.0" },
     { name = "psycopg2-binary" },
     { name = "pwdlib", extras = ["argon2"] },
     { name = "pydantic-settings" },

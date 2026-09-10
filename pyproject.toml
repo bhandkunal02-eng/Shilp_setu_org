@@ -15,7 +15,6 @@ dependencies = [
     "uvicorn",
     "aiosqlite",
     "fastapi-users[sqlalchemy]",
-    "imagekitio",
+    "imagekitio==5.9.0",
     "python-multipart",
 ]
-
